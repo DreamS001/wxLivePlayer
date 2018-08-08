@@ -1,0 +1,56 @@
+<view class="meContainer">
+  <view class="selfInfo">
+    <view class="detail">
+      <image src="/images/bg.png"></image>
+      <view class="content">
+        <view>
+          <text>关注</text>
+          <text>{{userinfo.atten_total}}</text>
+        </view>
+        <view>
+          <text>粉丝</text>
+          <text>{{userinfo.fans_total}}</text>
+        </view>
+        <view>
+          <text>小视频</text>
+          <text>{{userinfo.live_total}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="info">
+      <image src="{{userinfo.face}}"></image>
+      <text class="nick">{{userinfo.nickname}}</text>
+      <text>ID:{{userinfo.uid}}</text>
+    </view>
+  </view>
+  <view class="chooseItem">
+    <view  catchtap="onTap" data-type="charge">
+      <text>账户充值</text>
+      <image src="/images/arrow.png"></image>
+    </view>
+    <view  catchtap="onTap" data-type="level">
+      <text>等级晋升</text>
+      <image src="/images/arrow.png"></image>
+    </view>
+    <view catchtap="onTap" data-type="modal">
+      <text>关注公众号</text>
+      <image src="/images/arrow.png"></image>
+    </view>
+    <button open-type="contact" class="buttonType">
+      <view>
+          <text>小程序客服</text>
+          <image src="/images/arrow.png"></image>
+      </view>
+    </button>
+    <button  open-type="share" class="buttonType">
+      <view>
+         <text>邀请好友</text>
+         <image src="/images/arrow.png"></image>
+      </view>
+    </button>
+  </view>
+</view>
+<view class="modal" wx:if="{{isShow}}">
+  <image class="close" src="/images/close.png" catchtap="onTap" data-type="modal"></image>
+  <image class="content" src="/images/dialog.png"></image>
+</view>

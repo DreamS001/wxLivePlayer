@@ -1,0 +1,30 @@
+<view class="levelContainer">
+    <view class="top">我的钻石</view>
+    <view class="level">
+        <view class="num">
+            <image src="/images/badge.png"></image> 
+            <text class="levelNum">LV: {{level}}</text>
+            <text class="diamondNum">送出<text class="d">{{icon}}钻</text></text>
+        </view>
+        <view class="progress">
+            <view class="used"></view>
+        </view>
+        <view class="up">
+            <text>当前等级：</text>
+            <text>{{level}}</text>
+            <text>距离升级：</text>
+            <text>{{exp}}经验</text>
+        </view>
+    </view>
+    <view class="tips">
+        <view class="title">等级权益</view>
+        <text>1、不同等级图标不同，越高越尊贵</text>
+        <text>2、您的身份一眼可见，尊贵显而易见</text>
+    </view>
+    <view class="tips">
+         <view class="title">如何升级</view>
+        <text>1、登录就可以获得经验值哦！</text>
+        <text>2、观看也可以获得经验值哦，多看多得！</text>
+        <text>3、送礼物是升级最快的办法,送的越多升得越快</text>
+    </view>
+</view>

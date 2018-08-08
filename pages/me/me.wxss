@@ -1,0 +1,130 @@
+.meContainer{
+  display:flex;
+  flex-direction: column;
+  margin: 0 30rpx;
+}
+page {
+  margin-top: 100rpx !important;
+}
+.selfInfo {
+  display:flex;
+  flex-direction: column;
+  align-items:center;
+  font-size: 26rpx;
+  position: relative; 
+}
+.selfInfo .detail {
+  width: 559rpx;
+  height: 263rpx;
+  position: relative;
+  margin-top: 92rpx;
+}
+.detail image {
+  width: 559rpx;
+  height: 263rpx;
+  position:absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+.detail .content {
+  width: 100%;
+  display:flex;
+  flex-direction: row;
+  margin-top: 180rpx;
+}
+.content view {
+  flex: 1;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  color: #e7e8ff;
+}
+.selfInfo .info {
+  width: 158rpx;
+  color: #fff;
+  position: absolute;
+  top: 30rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  display:flex;
+  flex-direction:column;
+  align-items: center;
+}
+.info .nick {
+  font-size: 32rpx;
+}
+.info image {
+  display:block;
+  width: 111rpx;
+  height: 111rpx;
+  border-radius: 50%;
+  overflow:hidden;
+  margin-bottom: 12rpx;
+}
+.info text {
+  display:inline-block;
+  width: 158rpx;
+  overflow:hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  margin-top: 4rpx;
+}
+.chooseItem{
+  width: 100%;
+  font-size: 30rpx;
+  color: #333333;
+  margin-top: 38rpx;
+  margin-left:6rpx;
+}
+.chooseItem view {
+  height: 92rpx;
+  border-bottom: 1px solid #eaeaea;
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.chooseItem view image {
+  width: 24rpx;
+  height: 31rpx;
+}
+.buttonType{
+  background: transparent;
+  padding-left: 0px;
+  padding-right: 0px;
+  font-size: 30rpx;
+  color: #333;
+}
+.buttonType::after {
+  border:none;
+}
+.modal {
+  display:flex;
+  flex-direction: column;
+  position: fixed;
+  left: 0;
+  top: 0;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,.7);
+}
+.modal .close {
+  width: 72rpx;
+  height: 72rpx;
+  border-radius: 50%;
+  overflow:hidden;
+  margin-top: 188rpx;
+}
+.modal .content {
+  width: 620rpx;
+  height: 757rpx;
+  border-radius: 20rpx;
+  overflow:hidden;
+  margin-top: 48rpx;
+}
+page {
+  width: 100%;
+  height: 100%;
+}

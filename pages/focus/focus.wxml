@@ -1,0 +1,14 @@
+<view class="focusList">
+    <view class="top">花间直播</view>
+    <view wx:if="{{flag}}" class="tips">
+       <image src="/images/noData.png"></image>
+    </view> 
+    <block wx:for="{{focusList}}" wx:for-item="item" wx:key="item.uid">
+      <view class="item" catchtap="onBroadcast" data-anchorobj="{{item}}">
+        <image src="{{item.face}}" ></image>
+        <text class="status">{{item.is_live=='1'?'直播中':'休息中'}}</text>
+        <text class="total">{{item.signature}}</text>
+        <text class="nickname">{{item.nickname}}</text>
+      </view>
+    </block>
+</view>

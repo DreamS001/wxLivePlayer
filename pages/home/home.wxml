@@ -1,0 +1,21 @@
+
+<import src="/pages/home/anchorTemplate/anchor.wxml"/>
+<view class="container">
+  <view class="header">
+    <view class="title">花间直播</view>
+    <view class="select">
+        <view class="{{selectedType=='hotList'?'on':''}}" data-type="hotList" catchtap="selectedTap">热门</view>
+        <view class="{{selectedType=='nearList'?'on':''}}" data-type="nearList" catchtap="selectedTap">附近</view>
+    </view>
+  </view>
+  <scroll-view scroll-y bindscrolltolower="bindDownLoad" bindscrolltoupper="topLoad">
+    <view  class="list">
+       <block wx:for="{{currentList}}" wx:for-item="item" wx:key="id">
+          <view class="anchor" catchtap="detailTap" data-anchorobj="{{item}}">
+              <template is="anchorTmp" data="{{...item}}"/>
+          </view>
+        </block>
+        <view wx:if="{{isNone}}" class="tips">我是有底线的！</view>
+    </view>
+  </scroll-view>
+</view>

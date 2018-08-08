@@ -1,0 +1,164 @@
+<view class="detailContainer">
+   
+   <!-- 聊天输入区域 -->
+   <view class="bottom" wx:if="{{isShow}}">
+      <view class="btm">
+          <input type="text" placeholder="一场美丽的邂逅从聊天开始" maxlength="20" confirm-type="done" adjust-position="false" bindinput="onInput" bindconfirm="onConfirm" value="{{msg}}" focus="{{isFocus}}" bindblur="onBlur" cursor-spacing="30" bindfocus="onFocus" confirm-hold="true"></input>
+      </view>
+   </view> 
+
+
+  <!-- 直播区域 -->
+  <live-player class="{{curClass}}" mode="live" object-fit="fillCrop" src="{{item.url}}" autoplay bindstatechange="statechange" bindnetstatus="netstatus"  ></live-player> 
+
+   <!-- 主播信息区域 -->
+   <cover-view class="up">
+    <cover-view class="info">
+      <cover-view class="anchor">
+         <cover-view class="nickname">{{item.nickname}}</cover-view>
+         <cover-view class="total">{{item.total}}</cover-view>
+      </cover-view>
+      <cover-view class="focus" catchtap="focusTap">{{focus?'已关注':'关注'}}</cover-view>
+    </cover-view>
+    <cover-image class="face" src="{{item.face}}"></cover-image>
+  </cover-view>
+  <!-- 展示礼物区域 -->
+  <cover-view class="giftModal"  wx:if="{{preMessage.uid}}">
+      <cover-view class="userMsg">
+          <cover-view class="nk">{{preMessage.nickname}}</cover-view>
+          <cover-view class="giftMsg">送一个{{preMessage.gift_name}}</cover-view>
+      </cover-view>
+      <cover-image src="{{preMessage.face}}" class="userAva"></cover-image>
+      <cover-view class="pic">
+          <cover-image class="giftPic" src="http://img.51aso.cn/gift/{{preMessage.gift_id}}.png?v=161"></cover-image>
+      </cover-view>
+      <cover-view class="nums">X{{nums}}</cover-view>
+  </cover-view>
+
+  <!-- 聊天和图标区域 -->
+  <cover-view wx:if="{{!showGift&&isLive}}" class="bg">
+      <cover-view class="chatInfo">
+          <cover-view wx:for="{{infoList}}" wx:key="index" wx:for-item="item">
+              <cover-view wx:if="{{item.type=='chat'}}" class="msgInfo">
+                <cover-view class="grade">
+                    <cover-image src="/images/grade/user_grade_{{item.level}}@2x.png" class="ava"></cover-image>
+                    <cover-view class="level">{{item.data.grade}}</cover-view>
+                </cover-view>
+                <cover-view class="nickname">{{item.data.nickname}}：</cover-view> 
+                <cover-view class="visible">{{item.data.chat_msg}}</cover-view>
+              </cover-view>  
+              <cover-view wx:if="{{item.type=='sysInfo'}}" class="msgInfo">
+                <cover-view class="tips">系统消息：</cover-view>
+                <cover-view class="enter">{{item.msg}}</cover-view>
+              </cover-view>
+              <cover-view wx:if="{{(item.type=='enter')&&(item.level>16)}}" class="msgInfo">
+                <cover-view>直播消息：</cover-view>
+                <cover-view class="enter">一道金光闪过，
+                  <cover-view class="nickname">{{item.data.nickname}}</cover-view>进入直播间
+                </cover-view>
+              </cover-view> 
+              <cover-view wx:if="{{(item.type=='enter')&&(item.level<=16)}}" class="msgInfo">
+                <cover-view>直播消息：</cover-view>
+                <cover-view class="enter">{{item.data.welcome_msg}}</cover-view>
+              </cover-view> 
+              <cover-view wx:if="{{item.type=='anchor_leave'}}" class="msgInfo">
+                <cover-view>直播消息：</cover-view>
+                <cover-view class="enter">主播离开一下，精彩不中断，不要走开哦</cover-view>
+              </cover-view>
+              <cover-view wx:if="{{item.type=='anchor_restore'}}" class="msgInfo">
+                <cover-view>直播消息：</cover-view>
+                <cover-view class="enter">主播回来啦，视频即将恢复</cover-view>
+              </cover-view> 
+              <cover-view wx:if="{{item.type=='atten'}}" class="msgInfo">
+                <cover-view>直播消息：</cover-view>
+                <cover-view class="nickname">{{item.data.nickname}}</cover-view>
+                <cover-view>关注了主播，不错过下次直播</cover-view>
+              </cover-view>
+              <cover-view wx:if="{{item.type=='love'}}" class="msgInfo">
+                <cover-view class="grade">
+                    <cover-image src="/images/grade/user_grade_{{item.level}}@2x.png" class="ava" mode="aspectFill"></cover-image>
+                    <cover-view class="level">{{item.data.grade}}</cover-view>
+                </cover-view>
+                <cover-view class="nickname">{{item.data.nickname}}：</cover-view>
+                <cover-view>我点亮了</cover-view>
+                <cover-image src="/images/love/like_self{{randomValue}}.png" class="loveStyle"></cover-image>
+              </cover-view>
+              <cover-view wx:if="{{item.type=='gag'||item.type=='kickout'}}" class="msgInfo">
+                <cover-view>直播消息：</cover-view>
+                <cover-view class="nickname">{{item.data.nickname}}</cover-view>
+                <cover-view>被管理员禁言</cover-view>
+              </cover-view>
+              <cover-view wx:if="{{item.type=='share'}}" class="msgInfo">
+                <cover-view>直播消息：</cover-view>
+                <cover-view class="nickname">{{item.data.msg}}</cover-view>
+              </cover-view>
+              <cover-view wx:if="{{item.type=='gift_count'}}" class="msgInfo">
+                  <cover-view class="grade">
+                    <cover-image src="/images/grade/user_grade_{{item.level}}@2x.png" class="ava" mode="aspectFill"></cover-image>
+                    <cover-view class="level">{{item.data.grade}}</cover-view>
+                  </cover-view>
+                  <cover-view class="nickname">{{item.data.nickname}}：</cover-view> 
+                  <cover-view class="gift">送了{{item.data.gift_count}}个{{item.data.gift_name}}</cover-view>
+              </cover-view>
+          </cover-view>
+      </cover-view>
+      <cover-view class="iconBG" wx:if="{{!isShow}}">
+        <cover-view class="iconList" >
+              <cover-image src="/images/live/message.png" mode="aspectFill" catchtap="messageTap"></cover-image>
+              <cover-image src="/images/live/gift.png" mode="aspectFill" catchtap="giftTap"></cover-image>
+              <cover-image src="/images/live/close.png" mode="aspectFill" catchtap="closeTap"></cover-image>
+              
+          </cover-view>
+      </cover-view>
+  </cover-view>
+  
+  <cover-view wx:if="{{showGift}}" class="giftList">
+      <cover-view class="arrow">
+        <cover-image src="/images/left.png" catchtap="onRight"></cover-image>
+        <cover-image src="/images/right.png" catchtap="onLeft"></cover-image>
+      </cover-view>
+      <cover-view class="listWrapper">
+          <block wx:for="{{giftList}}" wx:key="index" wx:for-item="item">
+              <cover-view class="gift" data-obj="{{item}}" catchtap="onSelected">
+                  <cover-view class="img">
+                    <cover-image src="http://img.51aso.cn/gift/{{item.id}}.png?v=161"></cover-image>
+                  </cover-view>
+                  <cover-view class="price">
+                      <cover-view>{{item.price}}</cover-view>
+                      <cover-image src="/images/dia.png"></cover-image>
+                  </cover-view>
+                  <cover-view class="name">{{item.name}}</cover-view>
+                  <cover-image class="circle" src="/images/circle.png" wx:if="{{selectedObj.id==item.id}}"></cover-image>
+              </cover-view>
+          </block>
+      </cover-view>
+      <cover-view class="choose">
+          <cover-view class="charge" catchtap="onCharge">
+              <cover-view>充值：</cover-view>
+              <cover-view style="color: #fff">{{playerInfo.diamond}}</cover-view>
+              <cover-image src="/images/dia.png" class="diamond"></cover-image>
+              <cover-image src="/images/arrow.png" class="navi"></cover-image>
+          </cover-view>
+          <cover-view class="send" catchtap="onSend">发送</cover-view>
+      </cover-view>
+  </cover-view>
+  
+  <cover-view class="playerT" catchtap="onLove">
+  </cover-view>
+  <cover-view class="off" wx:if="{{!isLive}}">
+      <cover-view class="offInfo">
+         <cover-image src="{{item.face}}"></cover-image>
+         <cover-view class="nick">{{item.nickname}}</cover-view>
+      </cover-view>
+      <cover-view class="offTitle">
+         <cover-image src="/images/offLeft.png"></cover-image>
+         <cover-view class="title">本地直播已结束</cover-view>
+         <cover-image src="/images/offRight.png"></cover-image>
+      </cover-view>
+      <cover-view class="offBtn">
+         <cover-view class="item focus" wx:if="{{!focus}}" catchtap="focusTap">关注主播</cover-view>
+         <cover-view class="item back" catchtap="onBack">返回首页</cover-view>
+      </cover-view>
+  </cover-view>
+
+</view>

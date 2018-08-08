@@ -1,0 +1,25 @@
+<view class="diamondContainer">
+    <view class="top">我的钻石</view>
+    <view class="balance">
+        <image src="/images/diamond.png"></image>
+        <text>账户余额：<text class="money">{{coins}}</text></text>
+    </view>
+    <view class="charge">
+         <view class="title">充值</view>
+         <view class="list">
+          <block wx:for="{{chargeList}}"  wx:for-item="item" wx:key="index">
+             <view class="item">
+               <view class="left">
+                  <image src="/images/mark.png"></image>
+                  <text>{{item.diamond}}</text>
+                  <text class="give">{{item.memo}}</text>
+               </view>
+               <view class="right" catchtap="onCharge" data-obj="{{item}}">
+                  <text>¥{{item.money}}</text>
+               </view>
+             </view>
+            </block>
+         </view>
+    </view>
+    <view class="tel">{{tips}}</view>
+</view>

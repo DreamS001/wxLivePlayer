@@ -1,0 +1,83 @@
+.anchor {
+  display:flex;
+  flex-direction: column;
+  color: #c6c6c6;
+  font-size:20rpx;
+  margin-right: 27rpx;   
+  margin-top: 30rpx; 
+}
+.ava {
+   width: 330rpx;
+   height: 300rpx;
+   border-radius: 18rpx;
+   overflow:hidden;
+   position: relative; 
+}
+.ava .postImg {
+   width: 330rpx;
+   height: 300rpx;
+}
+.ava .status {
+   font-size: 16rpx;
+   color: #fff;
+   background: rgba(0,0,0,.4);
+   position: absolute;
+   top: 13rpx;
+   right: 15rpx;
+   padding: 6rpx 14rpx;
+   border-radius: 20rpx;
+}
+.ava .city {
+   font-size: 22rpx;
+   color: #fff;
+   background: rgba(105,159,232,.6);
+   position: absolute;
+   bottom: 0;
+   left: 0;
+   padding: 6rpx 16rpx;
+   border-radius: 0 30rpx 0 0;
+}
+.info {
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 20rpx;
+  margin-bottom: 18rpx;
+  align-content: center;
+  color: #999;
+  font-size: 22rpx;
+}
+.nickname {
+  display:flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+}
+.nickname>image {
+  display:inline-block;
+   width: 23rpx;
+   height: 26rpx;
+   margin-right: 12rpx;
+}
+.nickname .word {
+  display:inline-block;
+  width: 180rpx;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow:hidden;
+}
+.lbs {
+  display:flex;
+  flex-direction: row;
+  margin-bottom: 20rpx;
+  align-items: center;
+}
+.lbs>image {
+  width: 21rpx;
+  height: 28rpx;
+  margin-right: 12rpx;
+}
+.lbs text {
+  margin-right: 14rpx;
+}
+

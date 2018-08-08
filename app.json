@@ -1,0 +1,45 @@
+{
+  "pages":[
+    "pages/home/home",
+    "pages/focus/focus",
+    "pages/me/me",
+    "pages/me/level/level",
+    "pages/me/charge/charge",
+    "pages/broadcast/broadcast",
+    "pages/auth/auth"  
+  ],
+  "window":{
+    "backgroundTextStyle":"red",
+    "navigationBarBackgroundColor": "white",
+    "navigationBarTitleText": "花间直播",
+    "navigationBarTextStyle":"black",
+    "navigationStyle": "custom"
+  },
+  "tabBar": {
+    "position":"bottom",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath":"images/home_default.png",
+        "selectedIconPath":"images/home_selected.png"
+      },
+      {
+        "pagePath": "pages/focus/focus",
+        "text": "关注",
+        "iconPath": "images/focus_default.png",
+        "selectedIconPath": "images/focus_selected.png"
+      },
+      {
+        "pagePath": "pages/me/me",
+        "text": "我的",
+        "iconPath": "images/me_default.png",
+        "selectedIconPath": "images/me_selected.png"
+      }
+    ],
+    "backgroundColor":"#fff",
+    "borderStyle":"white",
+    "color":"#000",
+    "selectedColor":"#3662c0"
+  }
+}

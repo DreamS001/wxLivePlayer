@@ -1,0 +1,30 @@
+.authContainer {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+}
+.authContainer image {
+  display:inline-block;
+  width: 151rpx;
+  height: 151rpx;
+  border-radius: 20%;
+  overflow:hidden;
+  margin-top: 236rpx;
+  margin-bottom: 30rpx;
+}
+.authContainer text {
+  font-size: 30rpx;
+  color: #9a9a9a;
+}
+.authContainer button {
+  width: 590rpx;
+  height: 96rpx;
+  background: #ff77e9;
+  color: #fff;
+  margin-top: 296rpx;
+  border-radius: 10rpx;
+  overflow:hidden;
+}
+.authContainer button::after {
+  border:none;
+}

@@ -1,0 +1,71 @@
+.focusList{
+  display:flex;
+  flex-direction: column;
+  margin: 0 30rpx;
+  color: #fff;
+}
+page {
+  margin-top: 40rpx!important;
+}
+.top {
+  height: 88rpx;
+  background: #fff;
+  line-height: 88rpx;
+  text-align: center;
+  font-size: 34rpx;
+  color: #1a53bb;
+  margin-top: 40rpx;
+}
+.item {
+  width: 652rpx;
+  margin: 0 20rpx;
+  font-size: 16rpx;
+  position: relative;
+  margin-top: 42rpx;
+  border-radius: 20rpx;
+  overflow:hidden;
+}
+.item image{
+  width: 652rpx;
+  height: 560rpx;
+
+}
+.item .status {
+   color: #fff;
+   background: rgba(0,0,0,.4);
+   position: absolute;
+   top: 13rpx;
+   right: 42rpx;
+   padding: 6rpx 14rpx;
+   border-radius: 20rpx;
+}
+.item .nickname {
+  font-size: 28rpx;
+  font-weight: 600;
+  position: absolute;
+  left: 50rpx;
+  bottom: 20rpx;
+}
+.item .total {
+  font-size: 22rpx;
+   position: absolute;
+   right: 42rpx;
+   bottom: 23rpx;
+}
+.tips {
+  text-align: center;
+  font-size: 30rpx;
+  color: #000;
+  position:fixed;
+  top: 28%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.tips image {
+  width: 292rpx;
+  height: 267rpx;
+}
+page {
+  width: 100%;
+  height: 100%;
+}

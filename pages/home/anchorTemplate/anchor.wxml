@@ -1,0 +1,20 @@
+<template name="anchorTmp">
+   <view class="ava">
+      <image class="postImg" src="{{face}}"></image>
+      <text class="status" wx:if="{{is_live}}">{{is_live==1?'直播中':'休息中'}}</text>
+      <text class="city">{{city}}</text>
+    </view>
+    <view class="info">
+      <view class="nickname">
+        <!-- <image src="/images/per.png"></image> -->
+        <text class="word">{{nickname}}</text>
+      </view>
+      <text>{{total}}正在看</text>
+    </view>
+    <view class="lbs" wx:if="{{distance}}">
+      <image src="/images/lbs.png"></image>
+      <text>{{distance}}</text>
+      <text>{{city}},</text>
+      <text>{{region}}</text>
+    </view>
+</template>

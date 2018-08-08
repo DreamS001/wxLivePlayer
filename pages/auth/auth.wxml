@@ -1,0 +1,5 @@
+<view class="authContainer">
+   <image src="/images/logo.png"></image>
+   <text>需要使用你的微信昵称和头像</text>
+   <button wx:if="{{canIUse}}" open-type='getUserInfo' bindgetuserinfo="onGotUserInfo">点击授权</button>
+</view>

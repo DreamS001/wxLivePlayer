@@ -1,0 +1,95 @@
+.levelContainer {
+  display:flex;
+  flex-direction: column;
+  margin: 0 80rpx;
+}
+page {
+  margin-top: 40rpx !important;
+}
+.top {
+  height: 88rpx;
+  background: #fff;
+  line-height: 88rpx;
+  text-align: center;
+  font-size: 34rpx;
+  color: #1a53bb;
+}
+.level {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 30rpx;
+  margin-top: 50rpx;
+}
+.level .num {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 30rpx;
+  position: relative;
+}
+.level image {
+  width: 249rpx;
+  height: 171rpx;
+  display:block;
+}
+.level .levelNum {
+  color: #fff;
+  position: absolute;
+  bottom: 88rpx;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.level .diamondNum {
+   color: #000;
+   margin-top: 22rpx;
+}
+.level .diamondNum.d{
+  color:#ff8994;
+}
+.level text {
+  display:inline-block;
+}
+.level .up {
+  font-size: 24rpx;
+}
+.level .progress {
+  width: 494rpx;
+  height: 10rpx;
+  background: #eaeaff;
+  border-radius: 30rpx;
+  overflow:hidden;
+  position: relative;
+  margin-top: 22rpx;
+  margin-bottom: 22rpx;
+}
+.level .used {
+  width: 125rpx;
+  height: 10rpx;
+  background: #f06774;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 30rpx;
+  overflow:hidden;
+}
+.up text:nth-child(2n){
+  color: #ff8994;
+}
+.up text:nth-child(2){
+  margin-right: 38rpx;
+}
+.tips {
+  margin-top: 82rpx;
+  font-size: 28rpx;
+  color: #333333;
+}
+.tips .title {
+   font-size: 30rpx;
+   color: #1a53bb;
+   margin-bottom: 32rpx;
+}
+.tips text {
+  display:inline-block;
+  margin-bottom:28rpx;
+}
